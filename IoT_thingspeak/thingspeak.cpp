@@ -60,11 +60,12 @@ void thingspeak_loop()
 
 
   // Print Update Response to Serial Monitor
-  if (client.available())
-  {
-    char c = client.read();
-    Serial.print(c);
-  }
+  for (int j = 0; j < 200; ++j)
+    if (client.available())
+    {
+      char c = client.read();
+      //Serial.print(c);
+    }
 
   // Disconnect from ThingSpeak
   if (!client.connected() && lastConnected)
@@ -128,7 +129,7 @@ int updateThingSpeak(String tsData)
 
       lastConnectionTime = millis();
     }
-    
+
   return failedCounter;
 }
 

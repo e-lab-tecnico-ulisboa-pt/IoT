@@ -19,5 +19,5 @@ void loop()
   
   updateThingSpeak("field2="+analogValue0+"&field2="+analogValue1);
 
-  
+  delay(1000);
 }
