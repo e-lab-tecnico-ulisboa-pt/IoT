@@ -1,0 +1,2 @@
+configureIC	KEYWORD1
+measureTime	KEYWORD1

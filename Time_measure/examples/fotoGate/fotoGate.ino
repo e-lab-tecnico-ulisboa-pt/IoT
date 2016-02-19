@@ -1,0 +1,14 @@
+#include <Time_measure.h>
+#define pin_IC 7
+void setup() {
+ pinMode(pin_IC, INPUT);              // ICP1 pin (digital pin 4 on arduino) as input
+  configureIC(1);
+  Serial.begin(9600);                // initialize serial communication at 9600 bits per second
+  while (!Serial);
+}
+
+void loop() {
+  float a=measureTime();
+  Serial.print(a);
+  Serial.println(" s");
+}
